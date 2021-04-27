@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  border-spacing: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #2e223c;
+}
+body {
+  background-color: #2e223c;
+  height: 100%;
+}
+/* Animer le logo / texte. --------------- */
+.icon {
+  height: 20px;
+  overflow: visible;
+  margin-right: auto;
+}
+.icon path {
+  fill: #edf0f1;
+  stroke-width: 1;
+  stroke: #edf0f1;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+}
+.icon:hover path {
+  animation: animate-logo 2s linear forwards;
+}
+@keyframes animate-logo {
+  0% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+    stroke: transparent;
+  }
+  20% {
+    stroke: #00dcff;
+  }
+  40% {
+    stroke-dashoffset: 250;
+  }
+  80% {
+    stroke-dashoffset: 500;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 500;
+    stroke: #00dcff;
+    fill: #00dcff;
+  }
+}
+/* ----------------------------------------------- */
+button {
+  display: block;
+  margin: 1em auto 0;
+  padding: 0.5em 2em;
+  font-size: min(3vh, 3vw);
+}
+/* Navigation bar */
+li,
+a,
+button {
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 25px 10%;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #00dcff;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  left: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  display: none;
+  position: absolute;
+  color: #2e223c;
+  background-color: #edf0f1;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 2px;
+  z-index: 1;
+  text-align: left;
+}
+.dropdown-content li a {
+  color: #2e223c;
+  cursor: pointer;
+}
+
+.dropdown-content li a:hover {
+  color: #7a4df0;
+  transition: all 0.3s ease 0s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+button {
+  margin: 0px 00px 0px 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  background-image: linear-gradient(to bottom right, #00dcff, #7a4df0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-image: linear-gradient(to bottom right, #00ddffa2, #7b4df0a4);
+}
+
+/* enlever les fleche des input box */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Paramètre de la grille */
+.under-nav {
+  background-color: #edf0f1;
+  padding: 8px;
+  border-radius: 50px;
+}
+.grille {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+table {
+  border: 4px solid #0088a9;
+  border-radius: 3px;
+  margin: auto;
+}
+
+tr {
+  border-bottom: 0.5px solid #0087a965;
+  display: block;
+}
+
+/* détermine les lignes les plus foncés */
+tr:nth-of-type(3),
+tr:nth-of-type(6) {
+  border-bottom: 2px solid #0088a9;
+}
+
+td {
+  border-right: 0.5px solid #0087a965;
+}
+
+td:nth-of-type(3),
+td:nth-of-type(6) {
+  border-right: 2px solid #0088a9;
+}
+input {
+  height: min(calc(100vh / 15), calc(100vw / 15));
+  width: min(calc(100vh / 15), calc(100vw / 15));
+  background-color: #efefee;
+  color: #2e223c;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: min(4vh, 4vw);
+  text-align: center;
+  caret-color: transparent;
+}
+/* Change la couleur des valeur introduit par le générateur */
+input[readonly] {
+  color: #0088a9;
+}
+
+input:hover {
+  color: #efefee;
+  background-color: #7a4df0;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+input:focus {
+  color: #efefee;
+  background-color: #7a4df0;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+/* apparence des inputs voisins (meme ligne meme colonne "Peers") de la sélection */
+.selectionPeers {
+  background-color: rgba(0, 136, 169, 0.4);
+  color: #edf0f1;
+}
+.sameNumber {
+  background-color: rgba(0, 136, 169, 0.7);
+  color: #edf0f1;
+}
+/* Vérifie si les valeurs inscrite sont dans le range obligatoire(1-9) */
+input:invalid,
+.invalide {
+  border: 1px solid red;
+  background-color: #eec3c3;
+}
+.verifier {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verifier button {
+  margin: 10px 10px 0 10px;
+}
+
+.mask {
+  background: black;
+  opacity: 0.5;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+.verifier svg {
+  overflow: visible;
+  height: min(calc(100vh / 10), calc(100vw / 10));
+  width: min(calc(100vh / 10), calc(100vw / 10));
+  fill: #7a4df0;
+  stroke: aqua;
+}
